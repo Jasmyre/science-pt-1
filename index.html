@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Article</title>
+  <link rel="stylesheet" href="CSS/all.css">
+  <style>
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Styles for header */
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      color: #fff;
+      height: 70px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    /* Styles for main content */
+    .container {
+      margin: 30px;
+      line-height: 1.5;
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    ul,
+    ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    /* Hidden content */
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease-out;
+    }
+
+    /* Show content */
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animations */
+@keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+@keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    ul {
+      
+      list-style: none;
+      
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Research Article</h1>
+    <label>Jasmyre Andrei M. Lanuza</label>
+    <label>10-Matatag</label>
+  </header>
+
+  <div class="container">
+    <h2>Low Testosterone</h2>
+    <p>
+      Testosterone is a hormone that plays a crucial role in the development and maintenance of male sexual characteristics and function, such as muscle mass and strength, bone density, and sex drive. Low testosterone, also known as hypogonadism, occurs when the body does not produce enough of this hormone.
+    </p>
+
+    <h2>Causes of Low Testosterone</h2>
+    <p>
+      There are several factors that can contribute to low testosterone levels, including:
+    </p>
+    <ul>
+      <li class="hidden"><i class="fas fa-check"></i> Aging - Testosterone levels naturally decline as a man ages.</li>
+      <li class="hidden"><i class="fas fa-check"></i> Chronic illness - Conditions such as HIV/AIDS, kidney disease, and liver disease can cause low testosterone levels.</li>
+      <li class="hidden"><i class="fas fa-check"></i> Obesity - Excess body fat can lower testosterone production.</li>
+      <li class="hidden"><i class="fas fa-check"></i> Medications - Certain medications such as opioids and corticosteroids can interfere with testosterone production.</li>
+    </ul>
+
+    <h2>Effects of Low Testosterone</h2>
+    <p>
+      Low testosterone can have a variety of negative effects on a man's health and well-being, including:
+    </p>
+    <ul>
+      <li class="hidden"><i class="fas fa-exclamation-triangle"></i> Reduced sex drive and fertility</li>
+      <li class="hidden"><i class="fas fa-exclamation-triangle"></i> Erectile dysfunction</li>
+      <li class="hidden"><i class="fas fa-exclamation-triangle"></i> Loss of muscle mass and strength</li>
+      <li class="hidden"><i class="fas fa-exclamation-triangle"></i> Increased body fat</li>
+      <li class="hidden"><i class="fas fa-exclamation-triangle"></i> Decreased bone density</li>
+      <li class="hidden"><i class="fas fa-exclamation-triangle"></i> Mood changes, such as depression and irritability</li>
+    </ul>
+    <h2>Treatment of Low Testosterone</h2>
+    <p>
+      There are several treatment options available for men with low testosterone levels, including:
+    </p>
+    <ol>
+      <li class="hidden">Lifestyle changes, such as weight loss and exercise</li>
+      <li class="hidden">Testosterone replacement therapy, which can be administered through injections, skin patches, gels, or pellets</li>
+      <li class="hidden">Clomiphene citrate, a medication that can stimulate the production of testosterone</li>
+    </ol>
+  </div>
+
+  <script>
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    }, options);
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
